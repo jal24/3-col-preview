@@ -1,0 +1,132 @@
+// Colors 
+$primary-bright-orange: hsl(31, 77%, 52%);
+$primary-dark-cyan: hsl(184, 100%, 22%);
+$primary-very-dark-cyan: hsl(179, 100%, 13%);
+$transparent-white: hsla(0, 0%, 100%, 0.75);
+$light-gray: hsl(0, 0%, 95%);
+
+// Typography
+$lexend: 'Lexend Deca';
+$shoulder: 'Big Shoulders Display';
+
+// Other Values
+$border-radius: 5px;
+
+// Desktop Styles
+body{
+    font-size: 15px;
+}
+
+.orange{
+    color: $primary-bright-orange;
+
+    &:hover{
+        cursor: pointer;
+        background-color: $primary-bright-orange;
+        color: $light-gray;
+    }
+}
+
+.cyan{
+    color: $primary-dark-cyan;
+
+    &:hover{
+        cursor: pointer;
+        background-color: $primary-dark-cyan;
+        color: $light-gray;
+    }
+}
+
+.dark-cyan{
+    color: $primary-very-dark-cyan;
+
+    &:hover{
+        cursor: pointer;
+        background-color: $primary-very-dark-cyan;
+        color: $light-gray;
+    }
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-color: $primary-dark-cyan;
+
+    &-container{
+        width: 50%;
+        margin: 0 auto;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    &-heading{
+        font-family: $shoulder;
+        color: $light-gray;
+        margin-bottom: 5px;
+    }
+
+    &-description,&-btn{
+        font-family: $lexend;
+        font-size: 12px;
+    }
+
+    &-description{
+        color: $transparent-white;
+        font-weight: 400;
+        line-height: 18px;
+    }
+
+    &-btn{
+        background-color: $light-gray;
+        border: 2px solid $light-gray;
+        text-align: center;
+        width: 6rem;
+        padding: 8px;
+        margin-top: 50px;
+        border-radius: 25px;
+    }
+
+    &-icon{
+        width: 3rem;
+    }
+
+    &:first-of-type{
+        background-color: $primary-bright-orange;
+        border-top-left-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+    }
+
+    &:last-of-type{
+        background-color: $primary-very-dark-cyan;
+        border-top-right-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
+    }
+}
+
+
+
+// Mobile Styles
+@media screen and (max-width: 500px){
+    .card{
+        &:first-of-type{
+            border-top-right-radius: $border-radius;
+            border-bottom-left-radius: 0;
+        }
+
+        &:last-of-type{
+            border-bottom-left-radius: $border-radius;
+            border-top-right-radius: 0;
+        }
+
+        &-container{
+            flex-direction: column;
+        }
+
+        &-btn{
+            margin-top: 10px;
+        }
+    }
+}
